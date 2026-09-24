@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Custom Tournament - Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(15, 15, 26, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255, 102, 0, 0.5);
+            width: 100%;
+            max-width: 500px;
+            border: 2px solid #ff6600;
+        }
+        h2 {
+            text-align: center;
+            color: #ff6600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 14px;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #444;
+            background: #1a1a2e;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(45deg, #ff6600, #ffcc00);
+            border: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        button:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🔥 SAMIR GMR CUSTOM 🔥</h2>
+        <p class="subtitle">Register your squad & win exciting prizes!</p>
+        
+        <form onsubmit="sendToWhatsApp(event)">
+            <div class="form-group">
+                <label>Team Name</label>
+                <input type="text" id="teamName" placeholder="Enter your team name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Leader In-Game Name (IGN)</label>
+                <input type="text" id="leaderName" placeholder="Your Free Fire Name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Leader Free Fire UID</label>
+                <input type="number" id="leaderUid" placeholder="Enter 8/10 digit UID" required>
+            </div>
+
+            <div class="form-group">
+                <label>WhatsApp Number</label>
+                <input type="tel" id="whatsapp" placeholder="For custom room ID & password" required>
+            </div>
+
+            <div class="form-group">
+                <label>Match Type</label>
+                <select id="matchType">
+                    <option value="Squad">Squad (Full Map)</option>
+                    <option value="Duo">Duo (Full Map)</option>
+                    <option value="Solo">Solo (CS / Full Map)</option>
+                </select>
+            </div>
+
+            <button type="submit">Register via WhatsApp</button>
+        </form>
+    </div>
+
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+
+            let team = document.getElementById('teamName').value;
+            let leader = document.getElementById('leaderName').value;
+            let uid = document.getElementById('leaderUid').value;
+            let wp = document.getElementById('whatsapp').value;
+            let type = document.getElementById('matchType').value;
+
+            // Yahan apna WhatsApp number daal dena (Country code ke sath, jaise 91 lagakar)
+            let myPhoneNumber = "919120951675"; // <-- Yahan apna number daalna hai
+
+            let message = `🔥 *New Tournament Registration* 🔥%0A%0A` +
+                          `*Team Name:* ${team}%0A` +
+                          `*Leader IGN:* ${leader}%0A` +
+                          `*Leader UID:* ${uid}%0A` +
+                          `*WhatsApp:* ${wp}%0A` +
+                          `*Match Type:* ${type}`;
+
+            let whatsappURL = `https://wa.me/${myPhoneNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+
+</body>
+</html>
