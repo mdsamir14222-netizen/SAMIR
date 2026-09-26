@@ -3,219 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.d Samir - Official Website</title>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <title>Samir GMR999 - Gaming & Entertainment</title>
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color: #fff;
-            min-height: 100vh;
+            background-color: #0f1016;
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            min-height: 100vh;
         }
 
-        .container {
-            width: 100%;
-            max-width: 480px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        .card {
+            background: #1a1c29;
+            border: 2px solid #00f3ff;
+            border-radius: 15px;
+            padding: 30px;
             text-align: center;
+            width: 350px;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
         }
 
-        /* Profile Section */
-        .profile-pic {
-            width: 110px;
-            height: 110px;
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px auto;
             border-radius: 50%;
-            border: 3px solid #ff4757;
+            overflow: hidden;
+            border: 3px solid #ff007f;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            margin: 0 auto 15px;
-            box-shadow: 0 0 20px rgba(255, 71, 87, 0.5);
         }
 
         h1 {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #00f3ff;
+            text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
         }
 
-        .tagline {
+        p {
             font-size: 14px;
-            color: #a4b0be;
-            margin-bottom: 20px;
-        }
-
-        /* Social Media Buttons */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+            color: #b3b3b3;
             margin-bottom: 25px;
         }
 
-        .social-btn {
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 45px;
             height: 45px;
-            background: rgba(255, 255, 255, 0.1);
+            background: #252839;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 18px;
+            color: #ffffff;
+            font-size: 20px;
             text-decoration: none;
             transition: 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .social-btn:hover {
-            background: #ff4757;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+        .social-icons a.youtube:hover {
+            background: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+            border-color: #ff0000;
         }
 
-        /* Sections / Cards */
-        .card {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .social-icons a.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df5914 45%, #c62435 60%, #515ec4 90%);
+            box-shadow: 0 0 10px #df5914;
+            border-color: #df5914;
         }
 
-        .card h3 {
-            font-size: 16px;
-            color: #ff4757;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .card p {
-            font-size: 13px;
-            color: #dcdde1;
-            line-height: 1.5;
-        }
-
-        /* Interactive Clicker Feature */
-        .clicker-box {
-            background: linear-gradient(135deg, rgba(255, 71, 87, 0.2), rgba(48, 43, 99, 0.4));
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 71, 87, 0.3);
-            text-align: center;
-        }
-
-        .clicker-box h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #ff6b81;
-        }
-
-        #clickBtn {
-            background: #ff4757;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 14px;
-            font-weight: 600;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
-        }
-
-        #clickBtn:active {
-            transform: scale(0.95);
-        }
-
-        #score {
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 8px;
-            color: #fff;
-        }
-
-        /* Footer */
-        .footer {
-            font-size: 12px;
-            color: #718093;
-            margin-top: 20px;
+        .social-icons a.facebook:hover {
+            background: #1877f2;
+            box-shadow: 0 0 10px #1877f2;
+            border-color: #1877f2;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Profile Image (Yaha apni photo ka link ya filename daal sakta hai) -->
-        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="M.d Samir" class="profile-pic">
-        
-        <h1>M.d Samir</h1>
-        <p class="tagline">🚀 Creator | Gamer | Web Enthusiast</p>
-
-        <!-- Social Links -->
-        <div class="social-links">
-            <a href="https://youtube.com" target="_blank" class="social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://wa.me/" target="_blank" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="mailto:example@gmail.com" class="social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+    <div class="card">
+        <!-- Logo / Photo Section -->
+        <div class="logo-container">
+            <img src="1000138167.png" alt="Samir GMR999 Logo[span_1](start_span)"[span_1](end_span)>
         </div>
 
-        <!-- About Me Card -->
-        <div class="card">
-            <h3><i class="fa-solid fa-user"></i> Mere Bare Me</h3>
-            <p>Hello bhai! Main M.d Samir hoon. Mujhe gaming, coding aur naye tech projects banana pasand hai. Yeh meri personal website hai.</p>
-        </div>
+        <h1>Samir GMR999</h1>
+        <p>Gaming & Entertainment</p>
 
-        <!-- Skills Card -->
-        <div class="card">
-            <h3><i class="fa-solid fa-fire"></i> Skills & Interests</h3>
-            <p>• Video Editing & YouTube Content<br>• HTML, CSS & Basic Programming<br>• Gaming & Tech Setup</p>
-        </div>
+        <!-- Social Media Links -->
+        <div class="social-icons">
+            <!-- YouTube Link -->
+            <a href="https://youtube.com/@samir_gmr999?si=I21gmkZ89jDxpe5l" target="_blank" class="youtube" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
 
-        <!-- Interactive Clicker Game Feature -->
-        <div class="clicker-box">
-            <h3>🎮 Fun Zone (Tap Counter)</h3>
-            <button id="clickBtn" onclick="incrementScore()">Tap Me! 🔥</button>
-            <div id="score">Score: 0</div>
-        </div>
+            <!-- Instagram Link -->
+            <a href="https://www.instagram.com/samir_gmr999?stkn=MXBhZ2JoOGRpMXFybQ==" target="_blank" class="instagram" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
 
-        <!-- Footer -->
-        <div class="footer">
-            Designed with ❤️ by M.d Samir
+            <!-- Facebook Link (Gmail replaced) -->
+            <a href="https://www.facebook.com/share/1GxTZtirAA/" target="_blank" class="facebook" title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
         </div>
     </div>
-
-    <script>
-        // Interactive Clicker JavaScript logic
-        let count = 0;
-        function incrementScore() {
-            count++;
-            document.getElementById('score').innerText = "Score: " + count;
-        }
-    </script>
 
 </body>
 </html>
