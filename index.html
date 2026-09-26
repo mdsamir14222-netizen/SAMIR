@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAMIR GMR999 - Gaming Arena & YouTube Hub</title>
-    <!-- Google Fonts & FontAwesome for Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -260,7 +259,7 @@
             border-bottom: 1px solid #222538;
         }
 
-        /* YouTube Section */
+        /* Custom Video Section */
         .yt-section {
             padding: 60px 0;
         }
@@ -275,11 +274,12 @@
             align-items: center;
         }
 
-        .yt-video-frame {
+        .custom-video-frame {
             width: 100%;
             height: 350px;
             border-radius: 10px;
-            border: none;
+            object-fit: cover;
+            border: 1px solid #222538;
         }
 
         .yt-info h2 {
@@ -371,7 +371,6 @@
 </head>
 <body>
 
-    <!-- Header / Navbar -->
     <header>
         <div class="nav-container">
             <div class="logo">SAMIR<span>GMR999</span></div>
@@ -384,7 +383,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Dominate The Battleground</h1>
@@ -394,12 +392,10 @@
         </div>
     </section>
 
-    <!-- Tournaments Section -->
     <section id="tournaments" class="container">
         <h2 class="section-title">Active Tournaments</h2>
         <div class="tournament-grid">
             
-            <!-- Tournament Card 1 -->
             <div class="tournament-card">
                 <div class="status-badge">Open</div>
                 <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80');"></div>
@@ -411,7 +407,6 @@
                 </div>
             </div>
 
-            <!-- Tournament Card 2 -->
             <div class="tournament-card">
                 <div class="status-badge">Open</div>
                 <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80');"></div>
@@ -423,7 +418,6 @@
                 </div>
             </div>
 
-            <!-- Tournament Card 3 -->
             <div class="tournament-card">
                 <div class="status-badge">Upcoming</div>
                 <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80');"></div>
@@ -438,7 +432,6 @@
         </div>
     </section>
 
-    <!-- Leaderboard / Winners Section -->
     <section id="leaderboard" class="leaderboard-section">
         <div class="container" style="padding: 0;">
             <h2 class="section-title">Recent Tournament Winners</h2>
@@ -475,12 +468,13 @@
         </div>
     </section>
 
-    <!-- YouTube Featured Section -->
     <section id="youtube" class="yt-section container">
         <div class="yt-container">
             <div>
-                <!-- Aapke YouTube channel ka video link yahan daal sakte hain -->
-                <iframe class="yt-video-frame" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allowfullscreen></iframe>
+                <video class="custom-video-frame" autoplay muted loop playsinline>
+                    <source src="1000137288.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <div class="yt-info">
                 <h2>SAMIR GMR999 Live & Gameplay</h2>
@@ -490,7 +484,6 @@
         </div>
     </section>
 
-    <!-- Registration Modal Popup -->
     <div id="regModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -502,27 +495,25 @@
                 </div>
                 <div class="form-group">
                     <label>In-Game Name (IGN)</label>
-                    <input type="text" placeholder="Enter your game name" required>
+                    <input type="text" id="ignInput" placeholder="Enter your game name" required>
                 </div>
                 <div class="form-group">
                     <label>Free Fire UID</label>
-                    <input type="text" placeholder="Enter your UID numbers" required>
+                    <input type="text" id="uidInput" placeholder="Enter your UID numbers" required>
                 </div>
                 <div class="form-group">
                     <label>WhatsApp Number</label>
-                    <input type="tel" placeholder="For room ID & password" required>
+                    <input type="tel" id="whatsappInput" placeholder="For room ID & password" required>
                 </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Registration</button>
             </form>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 SAMIR GMR999. Built for Gamers & Creators. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Modal Functionality -->
     <script>
         const modal = document.getElementById("regModal");
         const tourneyInput = document.getElementById("tourneyName");
@@ -538,7 +529,20 @@
 
         function handleRegistration(event) {
             event.preventDefault();
-            alert("🎉 Registration Successful! Room ID & Password will be shared via WhatsApp.");
+            
+            const tournament = document.getElementById("tourneyName").value;
+            const ign = document.getElementById("ignInput").value;
+            const uid = document.getElementById("uidInput").value;
+            const whatsapp = document.getElementById("whatsappInput").value;
+
+            // Aapka Sahi WhatsApp number set kar diya gaya hai
+            const myWhatsAppNumber = "919120951675"; 
+
+            const message = `*New Tournament Registration*%0A%0A🎮 *Tournament:* ${tournament}%0A👤 *IGN:* ${ign}%0A🆔 *UID:* ${uid}%0A📱 *WhatsApp:* ${whatsapp}`;
+
+            const whatsappURL = `https://wa.me/${myWhatsAppNumber}?text=${message}`;
+            
+            window.open(whatsappURL, '_blank');
             closeModal();
         }
 
