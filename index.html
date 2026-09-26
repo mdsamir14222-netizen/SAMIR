@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAMIR GMR999 - Gaming Arena & YouTube Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <title>M.d Samir - Official Website</title>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --primary-color: #ff4757;
-            --secondary-color: #2ed573;
-            --dark-bg: #0f1016;
-            --card-bg: #1a1c29;
-            --text-color: #f1f2f6;
-            --accent-glow: rgba(255, 71, 87, 0.4);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -25,532 +18,202 @@
         }
 
         body {
-            background-color: var(--dark-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* Navbar */
-        header {
-            background: rgba(15, 16, 22, 0.95);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid #222538;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--text-color);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(15, 16, 22, 0.7), rgba(15, 16, 22, 0.9)), 
-                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-            margin-top: 60px;
-        }
-
-        .hero-content h1 {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 50px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            text-shadow: 0 0 15px var(--accent-glow);
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: #a4b0be;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-transform: uppercase;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: 0 4px 15px var(--accent-glow);
-        }
-
-        .btn-primary:hover {
-            background-color: #ff6b81;
-            transform: translateY(-2px);
-        }
-
-        .btn-yt {
-            background-color: #ff0000;
-            color: white;
-            margin-left: 10px;
-        }
-
-        .btn-yt:hover {
-            background-color: #cc0000;
-        }
-
-        /* Container Sections */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 36px;
-            margin-bottom: 40px;
-            text-align: center;
-            position: relative;
-            text-transform: uppercase;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary-color);
-            margin: 8px auto 0;
-            border-radius: 2px;
-        }
-
-        /* Tournaments Grid */
-        .tournament-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .tournament-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #222538;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        .tournament-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .status-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--secondary-color);
-            color: #000;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 20px;
-            text-transform: uppercase;
-        }
-
-        .card-img {
-            height: 160px;
-            background: #333;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .card-body {
+            align-items: center;
             padding: 20px;
         }
 
-        .card-body h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .match-info {
-            font-size: 14px;
-            color: #a4b0be;
-            margin-bottom: 15px;
-        }
-
-        .match-info i {
-            color: var(--primary-color);
-            margin-right: 5px;
-        }
-
-        /* Leaderboard Section */
-        .leaderboard-section {
-            background: #141621;
-            padding: 60px 20px;
-        }
-
-        .leaderboard-table {
-            max-width: 800px;
-            margin: 0 auto;
+        .container {
             width: 100%;
-            border-collapse: collapse;
-            background: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #222538;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
-        .leaderboard-table th, .leaderboard-table td {
-            padding: 15px 20px;
-            text-align: left;
-        }
-
-        .leaderboard-table th {
-            background: #1f2235;
-            color: var(--primary-color);
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 18px;
-            text-transform: uppercase;
-        }
-
-        .leaderboard-table tr:not(:last-child) td {
-            border-bottom: 1px solid #222538;
-        }
-
-        /* Custom Video Section */
-        .yt-section {
-            padding: 60px 0;
-        }
-
-        .yt-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .custom-video-frame {
-            width: 100%;
-            height: 350px;
-            border-radius: 10px;
+        /* Profile Section */
+        .profile-pic {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid #ff4757;
             object-fit: cover;
-            border: 1px solid #222538;
+            margin: 0 auto 15px;
+            box-shadow: 0 0 20px rgba(255, 71, 87, 0.5);
         }
 
-        .yt-info h2 {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 32px;
-            margin-bottom: 15px;
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fff;
         }
 
-        .yt-info p {
+        .tagline {
+            font-size: 14px;
             color: #a4b0be;
             margin-bottom: 20px;
         }
 
-        /* Modal Popup for Registration */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.8);
+        /* Social Media Buttons */
+        .social-links {
+            display: flex;
             justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            transition: 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .modal-content {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
-            border: 1px solid var(--primary-color);
-            position: relative;
+        .social-btn:hover {
+            background: #ff4757;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
         }
 
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 24px;
-            color: #aaa;
-            cursor: pointer;
-        }
-
-        .close-btn:hover {
-            color: white;
-        }
-
-        .form-group {
+        /* Sections / Cards */
+        .card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 15px;
             margin-bottom: 15px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
+        .card h3 {
+            font-size: 16px;
+            color: #ff4757;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #333;
-            background: #0f1016;
+        .card p {
+            font-size: 13px;
+            color: #dcdde1;
+            line-height: 1.5;
+        }
+
+        /* Interactive Clicker Feature */
+        .clicker-box {
+            background: linear-gradient(135deg, rgba(255, 71, 87, 0.2), rgba(48, 43, 99, 0.4));
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 71, 87, 0.3);
+            text-align: center;
+        }
+
+        .clicker-box h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #ff6b81;
+        }
+
+        #clickBtn {
+            background: #ff4757;
             color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
+        }
+
+        #clickBtn:active {
+            transform: scale(0.95);
+        }
+
+        #score {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 8px;
+            color: #fff;
         }
 
         /* Footer */
-        footer {
-            background-color: #0b0c10;
-            text-align: center;
-            padding: 30px 20px;
-            border-top: 2px solid #222538;
-            color: #747d8c;
-        }
-
-        /* Responsive */
-        @media(max-width: 768px) {
-            .yt-container {
-                grid-template-columns: 1fr;
-            }
-            .hero-content h1 {
-                font-size: 36px;
-            }
+        .footer {
+            font-size: 12px;
+            color: #718093;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <div class="logo">SAMIR<span>GMR999</span></div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#tournaments">Tournaments</a></li>
-                <li><a href="#leaderboard">Winners</a></li>
-                <li><a href="#youtube">YouTube</a></li>
-            </ul>
+    <div class="container">
+        <!-- Profile Image (Yaha apni photo ka link ya filename daal sakta hai) -->
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="M.d Samir" class="profile-pic">
+        
+        <h1>M.d Samir</h1>
+        <p class="tagline">🚀 Creator | Gamer | Web Enthusiast</p>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://youtube.com" target="_blank" class="social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/" target="_blank" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:example@gmail.com" class="social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Dominate The Battleground</h1>
-            <p>Join Free Fire & Esports custom tournaments, win exciting prizes, and catch live action!</p>
-            <a href="#tournaments" class="btn btn-primary">Join Tournament</a>
-            <a href="https://youtube.com/@samir_gmr999?si=GSI3475PQwceuIBE" target="_blank" class="btn btn-btn btn-yt"><i class="fab fa-youtube"></i> Subscribe</a>
+        <!-- About Me Card -->
+        <div class="card">
+            <h3><i class="fa-solid fa-user"></i> Mere Bare Me</h3>
+            <p>Hello bhai! Main M.d Samir hoon. Mujhe gaming, coding aur naye tech projects banana pasand hai. Yeh meri personal website hai.</p>
         </div>
-    </section>
 
-    <section id="tournaments" class="container">
-        <h2 class="section-title">Active Tournaments</h2>
-        <div class="tournament-grid">
-            
-            <div class="tournament-card">
-                <div class="status-badge">Open</div>
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="card-body">
-                    <h3>Free Fire Max Custom Clash</h3>
-                    <div class="match-info"><i class="fas fa-trophy"></i> Prize Pool: ₹1,500</div>
-                    <div class="match-info"><i class="fas fa-calendar-alt"></i> Map: Bermuda | Squad</div>
-                    <button class="btn btn-primary" onclick="openModal('Free Fire Max Custom Clash')">Register Now</button>
-                </div>
-            </div>
-
-            <div class="tournament-card">
-                <div class="status-badge">Open</div>
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="card-body">
-                    <h3>Solo Clash Battle</h3>
-                    <div class="match-info"><i class="fas fa-trophy"></i> Prize Pool: ₹800</div>
-                    <div class="match-info"><i class="fas fa-calendar-alt"></i> Map: Kalahari | Solo</div>
-                    <button class="btn btn-primary" onclick="openModal('Solo Clash Battle')">Register Now</button>
-                </div>
-            </div>
-
-            <div class="tournament-card">
-                <div class="status-badge">Upcoming</div>
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="card-body">
-                    <h3>Full Map Grand Tournament</h3>
-                    <div class="match-info"><i class="fas fa-trophy"></i> Prize Pool: ₹3,000</div>
-                    <div class="match-info"><i class="fas fa-calendar-alt"></i> Full Squad Match</div>
-                    <button class="btn btn-primary" onclick="openModal('Full Map Grand Tournament')">Register Now</button>
-                </div>
-            </div>
-
+        <!-- Skills Card -->
+        <div class="card">
+            <h3><i class="fa-solid fa-fire"></i> Skills & Interests</h3>
+            <p>• Video Editing & YouTube Content<br>• HTML, CSS & Basic Programming<br>• Gaming & Tech Setup</p>
         </div>
-    </section>
 
-    <section id="leaderboard" class="leaderboard-section">
-        <div class="container" style="padding: 0;">
-            <h2 class="section-title">Recent Tournament Winners</h2>
-            <table class="leaderboard-table">
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Player / Team Name</th>
-                        <th>Tournament</th>
-                        <th>Prize</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>🥇 #1</td>
-                        <td>Team ELITE</td>
-                        <td>Free Fire Max Clash</td>
-                        <td>₹1,000</td>
-                    </tr>
-                    <tr>
-                        <td>🥈 #2</td>
-                        <td>BAD BOY</td>
-                        <td>Solo Clash Battle</td>
-                        <td>₹500</td>
-                    </tr>
-                    <tr>
-                        <td>🥉 #3</td>
-                        <td>OP Gaming</td>
-                        <td>Free Fire Max Clash</td>
-                        <td>₹300</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Interactive Clicker Game Feature -->
+        <div class="clicker-box">
+            <h3>🎮 Fun Zone (Tap Counter)</h3>
+            <button id="clickBtn" onclick="incrementScore()">Tap Me! 🔥</button>
+            <div id="score">Score: 0</div>
         </div>
-    </section>
 
-    <section id="youtube" class="yt-section container">
-        <div class="yt-container">
-            <div>
-                <video class="custom-video-frame" autoplay muted loop playsinline>
-                    <source src="1000137288.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="yt-info">
-                <h2>SAMIR GMR999 Live & Gameplay</h2>
-                <p>Catch up on our channel's latest tournament broadcasts, funny moments, sensitivity settings, and custom HUD layouts. Don't forget to Subscribe!</p>
-                <a href="https://youtube.com/@samir_gmr999?si=GSI3475PQwceuIBE" target="_blank" class="btn btn-primary"><i class="fab fa-youtube"></i> Visit Channel</a>
-            </div>
-        </div>
-    </section>
-
-    <div id="regModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 style="font-family: 'Rajdhani', sans-serif; margin-bottom: 20px; color: var(--primary-color);">Tournament Registration</h2>
-            <form onsubmit="handleRegistration(event)">
-                <div class="form-group">
-                    <label>Selected Tournament</label>
-                    <input type="text" id="tourneyName" readonly style="color: #a4b0be;">
-                </div>
-                <div class="form-group">
-                    <label>In-Game Name (IGN)</label>
-                    <input type="text" id="ignInput" placeholder="Enter your game name" required>
-                </div>
-                <div class="form-group">
-                    <label>Free Fire UID</label>
-                    <input type="text" id="uidInput" placeholder="Enter your UID numbers" required>
-                </div>
-                <div class="form-group">
-                    <label>WhatsApp Number</label>
-                    <input type="tel" id="whatsappInput" placeholder="For room ID & password" required>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Registration</button>
-            </form>
+        <!-- Footer -->
+        <div class="footer">
+            Designed with ❤️ by M.d Samir
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 SAMIR GMR999. Built for Gamers & Creators. All rights reserved.</p>
-    </footer>
-
     <script>
-        const modal = document.getElementById("regModal");
-        const tourneyInput = document.getElementById("tourneyName");
-
-        function openModal(tourneyTitle) {
-            tourneyInput.value = tourneyTitle;
-            modal.style.display = "flex";
-        }
-
-        function closeModal() {
-            modal.style.display = "none";
-        }
-
-        function handleRegistration(event) {
-            event.preventDefault();
-            
-            const tournament = document.getElementById("tourneyName").value;
-            const ign = document.getElementById("ignInput").value;
-            const uid = document.getElementById("uidInput").value;
-            const whatsapp = document.getElementById("whatsappInput").value;
-
-            // Aapka Sahi WhatsApp number set kar diya gaya hai
-            const myWhatsAppNumber = "919120951675"; 
-
-            const message = `*New Tournament Registration*%0A%0A🎮 *Tournament:* ${tournament}%0A👤 *IGN:* ${ign}%0A🆔 *UID:* ${uid}%0A📱 *WhatsApp:* ${whatsapp}`;
-
-            const whatsappURL = `https://wa.me/${myWhatsAppNumber}?text=${message}`;
-            
-            window.open(whatsappURL, '_blank');
-            closeModal();
-        }
-
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
+        // Interactive Clicker JavaScript logic
+        let count = 0;
+        function incrementScore() {
+            count++;
+            document.getElementById('score').innerText = "Score: " + count;
         }
     </script>
 
